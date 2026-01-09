@@ -1,0 +1,32 @@
+Error at 2026/1/8 11:59:03: 未将对象引用设置到对象的实例。
+   在 jmsTools.Form1.InitializeComponent() 位置 E:\事件合约开源\JmsTools\Form1.Designer.cs:行号 674
+   在 jmsTools.Form1..ctor() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 89
+   在 jmsTools.Program.Main() 位置 E:\事件合约开源\JmsTools\Program.cs:行号 28
+Error in Form1 constructor at 2026/1/8 11:59:45: 未将对象引用设置到对象的实例。
+   在 jmsTools.Form1.InitializeComponent() 位置 E:\事件合约开源\JmsTools\Form1.Designer.cs:行号 674
+   在 jmsTools.Form1..ctor() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 91
+Error at 2026/1/8 11:59:45: 未将对象引用设置到对象的实例。
+   在 jmsTools.Form1.InitializeComponent() 位置 E:\事件合约开源\JmsTools\Form1.Designer.cs:行号 674
+   在 jmsTools.Form1..ctor() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 153
+   在 jmsTools.Program.Main() 位置 E:\事件合约开源\JmsTools\Program.cs:行号 28
+Error in FinalAnalysis at 2026/1/8 18:09:35: API 请求失败: BadRequest
+   在 jmsTools.Form1.<GetCurrentPriceFromBinance>d__79.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1855
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   在 jmsTools.Form1.<FinalAnalysis>d__64.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1110
+Error in FinalAnalysis at 2026/1/8 19:37:45: API 请求失败: BadRequest
+   在 jmsTools.Form1.<GetCurrentPriceFromBinance>d__79.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1891
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 jmsTools.Form1.<FinalAnalysis>d__64.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1145
+Error in FinalAnalysis at 2026/1/8 19:48:14: API 请求失败: BadRequest
+   在 jmsTools.Form1.<GetCurrentPriceFromBinance>d__79.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1891
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 jmsTools.Form1.<FinalAnalysis>d__64.MoveNext() 位置 E:\事件合约开源\JmsTools\Form1.cs:行号 1145
+Error getting price for BTCUSDT at 2026/1/8 21:40:15: 已取消一个任务。
+Error getting price for BTCUSDT at 2026/1/8 21:40:25: 已取消一个任务。

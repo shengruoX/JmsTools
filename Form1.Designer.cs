@@ -1,4 +1,4 @@
-﻿namespace jmsTools
+namespace jmsTools
 {
     partial class Form1
     {
@@ -84,6 +84,14 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbl_Countdown = new System.Windows.Forms.Label();
+            // 添加缺失的控件实例化代码
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.labelOverallWinRate = new System.Windows.Forms.Label();
+            this.listBoxPredictionHistory = new System.Windows.Forms.ListBox();
+            this.btnClearHistory = new System.Windows.Forms.Button();
+            // 创建新的标签页用于预测历史
+            this.tabPagePredictionHistory = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -107,6 +115,7 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabpage5);
+            this.tabControl1.Controls.Add(this.tabPagePredictionHistory);
             this.tabControl1.Location = new System.Drawing.Point(12, 44);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -567,6 +576,22 @@
             this.tabpage5.Text = "合约分析工具";
             this.tabpage5.UseVisualStyleBackColor = true;
             // 
+            // tabPagePredictionHistory
+            // 
+            this.tabPagePredictionHistory.Controls.Add(this.label16);
+            this.tabPagePredictionHistory.Controls.Add(this.label17);
+            this.tabPagePredictionHistory.Controls.Add(this.labelOverallWinRate);
+            this.tabPagePredictionHistory.Controls.Add(this.listBoxPredictionHistory);
+            this.tabPagePredictionHistory.Controls.Add(this.btnClearHistory);
+            this.tabPagePredictionHistory.Location = new System.Drawing.Point(4, 22);
+            this.tabPagePredictionHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagePredictionHistory.Name = "tabPagePredictionHistory";
+            this.tabPagePredictionHistory.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPagePredictionHistory.Size = new System.Drawing.Size(908, 414);
+            this.tabPagePredictionHistory.TabIndex = 5;
+            this.tabPagePredictionHistory.Text = "预测历史";
+            this.tabPagePredictionHistory.UseVisualStyleBackColor = true;
+            // 
             // groupBox3
             // 
             this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -628,7 +653,6 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.lbl_Countdown);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.btn_analysis);
             this.groupBox2.Controls.Add(this.com_Currency);
@@ -638,7 +662,7 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox2.Size = new System.Drawing.Size(234, 364);
+            this.groupBox2.Size = new System.Drawing.Size(234, 250);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "合约分析工具：仅供参考";
@@ -646,7 +670,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(34, 104);
+            this.label13.Location = new System.Drawing.Point(34, 54);
             this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(65, 12);
@@ -655,7 +679,7 @@
             // 
             // btn_analysis
             // 
-            this.btn_analysis.Location = new System.Drawing.Point(65, 193);
+            this.btn_analysis.Location = new System.Drawing.Point(65, 143);
             this.btn_analysis.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_analysis.Name = "btn_analysis";
             this.btn_analysis.Size = new System.Drawing.Size(103, 29);
@@ -671,7 +695,7 @@
             this.com_Currency.Items.AddRange(new object[] {
             "BTC/USDT",
             "ETH/USDT"});
-            this.com_Currency.Location = new System.Drawing.Point(99, 102);
+            this.com_Currency.Location = new System.Drawing.Point(99, 52);
             this.com_Currency.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.com_Currency.Name = "com_Currency";
             this.com_Currency.Size = new System.Drawing.Size(98, 20);
@@ -686,7 +710,7 @@
             "30分钟",
             "1小时",
             "4小时"});
-            this.com_Cycle.Location = new System.Drawing.Point(99, 135);
+            this.com_Cycle.Location = new System.Drawing.Point(99, 85);
             this.com_Cycle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.com_Cycle.Name = "com_Cycle";
             this.com_Cycle.Size = new System.Drawing.Size(98, 20);
@@ -695,12 +719,68 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(34, 137);
+            this.label14.Location = new System.Drawing.Point(34, 87);
             this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(65, 12);
             this.label14.TabIndex = 2;
             this.label14.Text = "选择周期：";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(34, 30);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 12);
+            this.label16.TabIndex = 6;
+            this.label16.Text = "总体胜率：";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(34, 60);
+            this.label17.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 12);
+            this.label17.TabIndex = 7;
+            this.label17.Text = "预测历史：";
+            // 
+            // labelOverallWinRate
+            // 
+            this.labelOverallWinRate.AutoSize = true;
+            this.labelOverallWinRate.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.labelOverallWinRate.Location = new System.Drawing.Point(105, 28);
+            this.labelOverallWinRate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelOverallWinRate.Name = "labelOverallWinRate";
+            this.labelOverallWinRate.Size = new System.Drawing.Size(77, 16);
+            this.labelOverallWinRate.TabIndex = 8;
+            this.labelOverallWinRate.Text = "0.00%";
+            // 
+            // listBoxPredictionHistory
+            // 
+            this.listBoxPredictionHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxPredictionHistory.FormattingEnabled = true;
+            this.listBoxPredictionHistory.ItemHeight = 12;
+            this.listBoxPredictionHistory.Location = new System.Drawing.Point(34, 80);
+            this.listBoxPredictionHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBoxPredictionHistory.Name = "listBoxPredictionHistory";
+            this.listBoxPredictionHistory.Size = new System.Drawing.Size(840, 304);
+            this.listBoxPredictionHistory.TabIndex = 9;
+            // 
+            // btnClearHistory
+            // 
+            this.btnClearHistory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClearHistory.Location = new System.Drawing.Point(771, 20);
+            this.btnClearHistory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnClearHistory.Name = "btnClearHistory";
+            this.btnClearHistory.Size = new System.Drawing.Size(103, 23);
+            this.btnClearHistory.TabIndex = 10;
+            this.btnClearHistory.Text = "清空历史";
+            this.btnClearHistory.UseVisualStyleBackColor = true;
+            this.btnClearHistory.Click += new System.EventHandler(this.btnClearHistory_Click);
             // 
             // label1
             // 
@@ -754,17 +834,20 @@
             // lbl_Countdown
             // 
             this.lbl_Countdown.AutoSize = true;
-            this.lbl_Countdown.Location = new System.Drawing.Point(65, 299);
+            this.lbl_Countdown.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lbl_Countdown.ForeColor = System.Drawing.Color.Red;
+            this.lbl_Countdown.Location = new System.Drawing.Point(400, 18);
             this.lbl_Countdown.Name = "lbl_Countdown";
-            this.lbl_Countdown.Size = new System.Drawing.Size(41, 12);
-            this.lbl_Countdown.TabIndex = 5;
-            this.lbl_Countdown.Text = "倒计时";
+            this.lbl_Countdown.Size = new System.Drawing.Size(125, 16);
+            this.lbl_Countdown.TabIndex = 8;
+            this.lbl_Countdown.Text = "倒计时：9分10秒";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(958, 510);
+            this.Controls.Add(this.lbl_Countdown);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.comboBoxMainNet);
@@ -790,6 +873,8 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPagePredictionHistory.ResumeLayout(false);
+            this.tabPagePredictionHistory.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -852,6 +937,12 @@
         private System.Windows.Forms.GroupBox 生成配置;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbl_Countdown;
+        private System.Windows.Forms.Label labelOverallWinRate;
+        private System.Windows.Forms.ListBox listBoxPredictionHistory;
+        private System.Windows.Forms.Button btnClearHistory;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TabPage tabPagePredictionHistory;
     }
 }
 

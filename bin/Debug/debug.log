@@ -1,0 +1,11 @@
+Application starting at 2026/1/8 12:17:17
+Creating Form1 at 2026/1/8 12:17:17
+InitializeComponent completed at 2026/1/8 12:17:18
+Loaded Ethrpc_nodes.txt at 2026/1/8 12:17:18
+Loaded Bscrpc_nodes.txt at 2026/1/8 12:17:18
+Loaded bip39.txt at 2026/1/8 12:17:18
+Updated RichTextBox at 2026/1/8 12:17:18
+Initialized countdown timer at 2026/1/8 12:17:18
+Form1 constructor completed at 2026/1/8 12:17:18
+Form1 created at 2026/1/8 12:17:18
+Starting Application.Run at 2026/1/8 12:17:18
